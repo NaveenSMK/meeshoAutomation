@@ -5,7 +5,7 @@ name: download label
 
 on:
   schedule:
-    - cron: 0 19 * * *
+    - cron: '55 18 * * *'
 
 permissions:
   contents: read
