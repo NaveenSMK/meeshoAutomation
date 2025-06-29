@@ -5,7 +5,7 @@ Library     CSVLibrary
 Library     Collections
 Library     DateTime
 Library     emailManager.py
-Library     PyVirtualDisplay
+#Library     PyVirtualDisplay
 Variables   meesho_locator.yaml
 
 Test Teardown   Close All Browsers
@@ -23,10 +23,10 @@ ${EMAIL_PASSKEY}        vzshebjcyoirkbxh
 *** Test Cases ***
 Meesho download Labels
     [Tags]  meesho
-    ${width}=    Set Variable    1024
-    ${height}=    Set Variable    768
-    ${display}=    Start Virtual Display    width=${width}    height=${height}
-    Set PDF Download Folder    labeldownload
+#    ${width}=    Set Variable    1024
+#    ${height}=    Set Variable    768
+#    ${display}=    Start Virtual Display    width=${width}    height=${height}
+#    Set PDF Download Folder    labeldownload
     ${credentials_list}=    read_csv_file_to_associative    ${CSV_FILE_PATH}
     FOR    ${user}    IN    @{credentials_list}
           TRY
@@ -67,11 +67,11 @@ Meesho download Labels
             Should Be Equal    ${status}    SUCCESS    PDF workflow failed
           EXCEPT    AS  ${error}
             Close All Browsers
-            Stop Virtual Display    ${display}
+#            Stop Virtual Display    ${display}
             Log    Error: Failed for user - ${user.userName}
             Log To Console    Error occurred: ${error}
             Run Keyword And Continue On Failure    Fail  Test case failed due to caught exception
           END
         END
-    Stop Virtual Display    ${display}
+#    Stop Virtual Display    ${display}
 
