@@ -6,6 +6,7 @@ name: download label
 on:
   schedule:
     - cron: '35 3 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
