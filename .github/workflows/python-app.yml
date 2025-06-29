@@ -23,7 +23,7 @@ jobs:
     - name: update permission
       run: RUN chmod ugo+w /var/log
     - name: Setup Chrome
-      uses: browser-actions/setup-chrome@latest
+      uses: browser-actions/setup-firefox@v1
     - name: update packages
       run: sudo apt-get --fix-broken --assume-yes install
     - name: Set up Python 3.10

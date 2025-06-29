@@ -11,7 +11,7 @@ Variables   meesho_locator.yaml
 Test Teardown   Close All Browsers
 
 *** Variables ***
-${BROWSER}  chrome
+${BROWSER}  firefox
 ${url}      https://supplier.meesho.com/panel/v3/new/root/login
 ${CSV_FILE_PATH}        ${CURDIR}/credentials.csv
 ${SENDER_EMAIL}         navenmohankumar99@gmail.com
