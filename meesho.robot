@@ -61,9 +61,10 @@ Meesho download Labels
             Close All Browsers
             ${status}       Process PDF Email Workflow      ${SENDER_EMAIL}    ${user.receiver_email}    ${EMAIL_PASSKEY}
             Should Be Equal    ${status}    SUCCESS    PDF workflow failed
-          EXCEPT
+          EXCEPT    AS  ${error}
             Close All Browsers
             Log    Error: Failed for user - ${user.userName}
+            Log To Console    Error occurred: ${error}
             Run Keyword And Continue On Failure    Fail  Test case failed due to caught exception
           END
         END
