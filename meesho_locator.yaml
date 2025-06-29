@@ -9,3 +9,4 @@ chk_selectAllRows   : "xpath://input[@type ='checkbox' and @aria-label='select a
 btn_downloadLabel   : "xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/.."
 ele_NoSelected      : "xpath://p[text()='Label Downloaded - No']"
 ele_popup           : "xpath://span[text()='Ready to Ship Labels']"
+btn_gotit           : "xpath://button/span[text()='Got it']"
