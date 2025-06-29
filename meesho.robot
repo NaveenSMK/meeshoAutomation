@@ -49,11 +49,12 @@ Meesho download Labels
             Click Element    ${btn_no}
             sleep   1s
             Wait Until Element Is Visible    ${ele_NoSelected}      60
+            sleep   1s
             Wait Until Element Is Visible    ${chk_selectAllRows}   60
             Click Element    ${chk_selectAllRows}
             Wait Until Element Is Visible    ${btn_downloadLabel}   60
             Click Element    ${btn_downloadLabel}
-            Sleep    3s
+            Sleep    5s
             Wait Until Element Is Visible    ${ele_popup}           60
             Wait Until Element Is Visible    ${btn_downloadLabel}   60
             Click Element    ${btn_downloadLabel}
