@@ -26,11 +26,11 @@ Meesho download Labels
 #    ${width}=    Set Variable    1024
 #    ${height}=    Set Variable    768
 #    ${display}=    Start Virtual Display    width=${width}    height=${height}
-#    Set PDF Download Folder    labeldownload
+    Set PDF Download Folder    labeldownload
     ${credentials_list}=    read_csv_file_to_associative    ${CSV_FILE_PATH}
     FOR    ${user}    IN    @{credentials_list}
           TRY
-            open browser    ${url}   ${BROWSER}   options=add_argument("--disable-popup-blocking"); add_argument("window-size=1920,1080"); add_argument("--ignore-certificate-errors"); add_argument("start-maximized"); add_argument("--no-sandbox"); add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage")
+            open browser    ${url}   ${BROWSER}   options=add_argument("--disable-popup-blocking"); add_argument("window-size=1920,1080"); add_argument("--ignore-certificate-errors"); add_argument("start-maximized"); add_argument("--no-sandbox"); add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--incognito");add_argument("--user-data-dir=/tmp/selenium-user-data")
             maximize browser window
             set selenium implicit wait    60
             Wait Until Element Is Visible    ${txt_username}   60
