@@ -1,498 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-06-29T21:04:09.540851" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-06-29T21:50:04.720920" rpa="false" schemaversion="5">
 <suite id="s1" name="meeshoAutomation" source="C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation">
 <suite id="s1-s1" name="Meesho" source="C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\meesho.robot">
-<test id="s1-s1-t1" name="Meesho download Labels" line="22">
+<test id="s1-s1-t1" name="Meesho download Labels" line="24">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-29T21:50:05.104158" level="INFO">${width} = 1024</msg>
+<var>${width}</var>
+<arg>1024</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-29T21:50:05.103934" elapsed="0.000263"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-29T21:50:05.104638" level="INFO">${height} = 768</msg>
+<var>${height}</var>
+<arg>768</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-29T21:50:05.104472" elapsed="0.000194"/>
+</kw>
+<kw name="Start Virtual Display">
+<msg time="2025-06-29T21:50:05.107616" level="FAIL">No keyword with name 'Start Virtual Display' found.</msg>
+<var>${display}</var>
+<arg>width=${width}</arg>
+<arg>height=${height}</arg>
+<status status="FAIL" start="2025-06-29T21:50:05.107551" elapsed="0.000120">No keyword with name 'Start Virtual Display' found.</status>
+</kw>
 <kw name="Set PDF Download Folder" owner="emailManager">
-<msg time="2025-06-29T21:04:10.492154" level="INFO">Setting download folder to: labeldownload</msg>
-<msg time="2025-06-29T21:04:10.492639" level="INFO">Download directory exists: C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\labeldownload</msg>
-<msg time="2025-06-29T21:04:10.492789" level="INFO">SUCCESS: Download folder changed from 'downloads' to 'labeldownload'</msg>
 <arg>labeldownload</arg>
 <doc>Robot Framework keyword to set the default download folder.</doc>
-<status status="PASS" start="2025-06-29T21:04:10.491547" elapsed="0.001413"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.108124" elapsed="0.000036"/>
 </kw>
 <kw name="Read Csv File To Associative" owner="CSVLibrary">
-<msg time="2025-06-29T21:04:10.496087" level="INFO">${credentials_list} = [{'userName': 'abimanyuventures@gmail.com', 'password': 'Abimanyu@2166', 'receiver_email': 'manobca65@gmail.com'}, {'userName': '9952431471', 'password': '1422Jp##', 'receiver_email': 'manobca65@gmail...</msg>
 <var>${credentials_list}</var>
 <arg>${CSV_FILE_PATH}</arg>
 <doc>Read CSV file and return its content as a Python list of dictionaries.</doc>
-<status status="PASS" start="2025-06-29T21:04:10.494243" elapsed="0.001922"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.108548" elapsed="0.000037"/>
 </kw>
 <for flavor="IN">
 <iter>
 <try>
 <branch type="TRY">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:10.498588" level="INFO">Opening browser 'chrome' to base url 'https://supplier.meesho.com/panel/v3/new/root/login'.</msg>
 <arg>${url}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_argument("--disable-popup-blocking"); add_argument("window-size=1920,1080"); add_argument("--ignore-certificate-errors"); add_argument("start-maximized"); add_argument("--no-sandbox"); add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-29T21:04:10.498105" elapsed="9.425868"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109509" elapsed="0.000031"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-29T21:04:19.924529" elapsed="0.102993"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109658" elapsed="0.000025"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>60</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-06-29T21:04:20.028005" elapsed="0.003420"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109774" elapsed="0.000023"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${txt_username}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:04:20.031883" elapsed="0.090549"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109887" elapsed="0.000023"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:20.126884" level="INFO">Typing text 'abimanyuventures@gmail.com' into text field 'xpath://input[@name='emailOrPhone']'.</msg>
 <arg>${txt_username}</arg>
 <arg>${user.userName}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:04:20.123236" elapsed="0.868871"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110000" elapsed="0.000022"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:20.994225" level="INFO">Typing text 'Abimanyu@2166' into text field 'xpath://input[@type='password']'.</msg>
 <arg>${txt_password}</arg>
 <arg>${user.password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:04:20.992624" elapsed="0.583120"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110109" elapsed="0.000023"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:21.576776" level="INFO">Clicking element 'xpath://span[contains(text(),'Log in')]'.</msg>
 <arg>${btn_login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:04:21.576225" elapsed="0.400339"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110224" elapsed="0.000024"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:04:22.982899" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:04:21.977039" elapsed="1.006264"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110332" elapsed="0.000025"/>
 </kw>
 <kw name="Wait For Condition" owner="SeleniumLibrary">
 <arg>return document.readyState == "complete"</arg>
 <doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-06-29T21:04:22.984278" elapsed="1.683785"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110443" elapsed="0.000022"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${btn_orders}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:04:24.668340" elapsed="0.085814"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110565" elapsed="0.000030"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:24.754882" level="INFO">Clicking element 'xpath://p[text()='Orders']'.</msg>
 <arg>${btn_orders}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:04:24.754465" elapsed="0.451008"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110790" elapsed="0.000030"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${btn_readyToShip}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:04:25.206240" elapsed="0.860962"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.110943" elapsed="0.000045"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:26.068284" level="INFO">Clicking element 'xpath://button[text()='Ready to Ship']'.</msg>
 <arg>${btn_readyToShip}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:04:26.067705" elapsed="0.407944"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.111241" elapsed="0.000024"/>
 </kw>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2025-06-29T21:04:26.476087" elapsed="1.772396"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.111350" elapsed="0.000023"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:04:30.250049" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:04:28.248991" elapsed="2.001328"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.111452" elapsed="0.000024"/>
 </kw>
 <kw name="Wait For Condition" owner="SeleniumLibrary">
 <arg>return document.readyState == "complete"</arg>
 <doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-06-29T21:04:30.250800" elapsed="0.014302"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.111561" elapsed="0.000023"/>
 </kw>
 <kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:04:30.266631" level="INFO">Clicking element 'xpath://button/span[text()='Got it']'.</msg>
-<msg time="2025-06-29T21:05:30.488211" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-29T21:05:30.489111" level="FAIL">Element with locator 'xpath://button/span[text()='Got it']' not found.</msg>
-<arg>${btn_gotit}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-06-29T21:04:30.266110" elapsed="60.244902">Element with locator 'xpath://button/span[text()='Got it']' not found.</status>
-</kw>
 <arg>Click Element</arg>
 <arg>${btn_gotit}</arg>
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="FAIL" start="2025-06-29T21:04:30.265596" elapsed="60.245759">Element with locator 'xpath://button/span[text()='Got it']' not found.</status>
+<status status="NOT RUN" start="2025-06-29T21:50:05.111682" elapsed="0.000024"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${btn_labelDownloaded}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:30.511783" elapsed="0.061894"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.111796" elapsed="0.000023"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:30.574759" level="INFO">Clicking element 'xpath://p[text()='Label downloaded']'.</msg>
 <arg>${btn_labelDownloaded}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:05:30.574177" elapsed="0.295772"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112004" elapsed="0.000097"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${btn_no}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:30.870480" elapsed="0.042421"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112209" elapsed="0.000024"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:30.913571" level="INFO">Clicking element 'xpath://p[text()='No']'.</msg>
 <arg>${btn_no}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:05:30.913236" elapsed="0.265266"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112326" elapsed="0.000022"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:05:32.180130" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:05:31.178946" elapsed="1.001556"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112433" elapsed="0.000025"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ele_NoSelected}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:32.181205" elapsed="0.054433"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112547" elapsed="0.000027"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:05:33.237357" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:05:32.236097" elapsed="1.001537"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112695" elapsed="0.000024"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${chk_selectAllRows}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:33.238102" elapsed="0.743297"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.112803" elapsed="0.000023"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:33.982789" level="INFO">Clicking element 'xpath://input[@type ='checkbox' and @aria-label='select all rows']/..'.</msg>
 <arg>${chk_selectAllRows}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:05:33.982096" elapsed="0.344207"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.113344" elapsed="0.000041"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${btn_downloadLabel}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:34.326804" elapsed="0.038714"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.113523" elapsed="0.000034"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:34.366255" level="INFO">Clicking element 'xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/..'.</msg>
 <arg>${btn_downloadLabel}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:05:34.365846" elapsed="0.234990"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.113685" elapsed="0.000032"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:05:39.602784" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:05:34.601309" elapsed="5.001763"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.113833" elapsed="0.000034"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ele_popup}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:39.603550" elapsed="0.077802"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.113990" elapsed="0.000033"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${btn_downloadLabel}</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:39.681852" elapsed="5.761641"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.114151" elapsed="0.000033"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:45.444528" level="INFO">Clicking element 'xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/..'.</msg>
 <arg>${btn_downloadLabel}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:05:45.443968" elapsed="0.254654"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.114311" elapsed="0.000032"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-29T21:05:45.699030" elapsed="6.677060"/>
-</kw>
-<kw name="Process PDF Email Workflow" owner="emailManager">
-<msg time="2025-06-29T21:05:52.378044" level="INFO">================================================================================</msg>
-<msg time="2025-06-29T21:05:52.378135" level="INFO">STARTING PDF EMAIL WORKFLOW</msg>
-<msg time="2025-06-29T21:05:52.378198" level="INFO">================================================================================</msg>
-<msg time="2025-06-29T21:05:52.378259" level="INFO">STEP 1: Verifying download directory...</msg>
-<msg time="2025-06-29T21:05:52.378695" level="INFO">Download directory exists: C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\labeldownload</msg>
-<msg time="2025-06-29T21:05:52.378781" level="INFO">STEP 2: Searching for latest PDF file...</msg>
-<msg time="2025-06-29T21:05:52.379943" level="WARN">WARNING: No PDF files found in directory: C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\labeldownload</msg>
-<msg time="2025-06-29T21:05:52.381812" level="ERROR">FAILURE: No PDF files found in directory: C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\labeldownload</msg>
-<msg time="2025-06-29T21:05:52.383476" level="INFO">${status} = FAILURE</msg>
-<var>${status}</var>
-<arg>${SENDER_EMAIL}</arg>
-<arg>${user.receiver_email}</arg>
-<arg>${EMAIL_PASSKEY}</arg>
-<doc>Main Robot Framework keyword to process PDF email workflow.</doc>
-<status status="PASS" start="2025-06-29T21:05:52.376584" elapsed="0.007004"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2025-06-29T21:05:52.384832" level="FAIL">PDF workflow failed: FAILURE != SUCCESS</msg>
-<arg>${status}</arg>
-<arg>SUCCESS</arg>
-<arg>PDF workflow failed</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2025-06-29T21:05:52.384081" elapsed="0.000972">PDF workflow failed: FAILURE != SUCCESS</status>
-</kw>
-<status status="FAIL" start="2025-06-29T21:04:10.497837" elapsed="101.887481">Several failures occurred:
-
-1) Element with locator 'xpath://button/span[text()='Got it']' not found.
-
-2) PDF workflow failed: FAILURE != SUCCESS</status>
-</branch>
-<branch type="EXCEPT" assign="${error}">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-29T21:05:52.385935" elapsed="0.000342"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-06-29T21:05:52.387822" level="INFO">Error: Failed for user - abimanyuventures@gmail.com</msg>
-<arg>Error: Failed for user - ${user.userName}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-29T21:05:52.386553" elapsed="0.001388"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Error occurred: ${error}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-29T21:05:52.388225" elapsed="0.000951"/>
-</kw>
-<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
-<kw name="Fail" owner="BuiltIn">
-<msg time="2025-06-29T21:05:52.390369" level="FAIL">Test case failed due to caught exception</msg>
-<arg>Test case failed due to caught exception</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="FAIL" start="2025-06-29T21:05:52.389968" elapsed="0.000573">Test case failed due to caught exception</status>
-</kw>
-<arg>Fail</arg>
-<arg>Test case failed due to caught exception</arg>
-<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="FAIL" start="2025-06-29T21:05:52.389562" elapsed="0.001190">Test case failed due to caught exception</status>
-</kw>
-<status status="FAIL" start="2025-06-29T21:05:52.385616" elapsed="0.005311">Test case failed due to caught exception</status>
-</branch>
-<status status="FAIL" start="2025-06-29T21:04:10.497766" elapsed="101.893659">Test case failed due to caught exception</status>
-</try>
-<var name="${user}">{'userName': 'abimanyuventures@gmail.com', 'password': 'Abimanyu@2166', 'receiver_email': 'manobca65@gmail.com'}</var>
-<status status="FAIL" start="2025-06-29T21:04:10.497656" elapsed="101.893933">Test case failed due to caught exception</status>
-</iter>
-<iter>
-<try>
-<branch type="TRY">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:52.394065" level="INFO">Opening browser 'chrome' to base url 'https://supplier.meesho.com/panel/v3/new/root/login'.</msg>
-<arg>${url}</arg>
-<arg>${BROWSER}</arg>
-<arg>options=add_argument("--disable-popup-blocking"); add_argument("window-size=1920,1080"); add_argument("--ignore-certificate-errors"); add_argument("start-maximized"); add_argument("--no-sandbox"); add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage")</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-29T21:05:52.393215" elapsed="7.196413"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-29T21:05:59.590687" elapsed="0.069206"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>60</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-06-29T21:05:59.660444" elapsed="0.003315"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${txt_username}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:05:59.664237" elapsed="0.071747"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:05:59.738933" level="INFO">Typing text '9952431471' into text field 'xpath://input[@name='emailOrPhone']'.</msg>
-<arg>${txt_username}</arg>
-<arg>${user.userName}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:05:59.736472" elapsed="0.595446"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:06:00.334431" level="INFO">Typing text '1422Jp##' into text field 'xpath://input[@type='password']'.</msg>
-<arg>${txt_password}</arg>
-<arg>${user.password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:06:00.332455" elapsed="0.547356"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:06:00.881068" level="INFO">Clicking element 'xpath://span[contains(text(),'Log in')]'.</msg>
-<arg>${btn_login}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:06:00.880515" elapsed="0.345645"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:06:02.232781" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:06:01.226634" elapsed="1.006459"/>
-</kw>
-<kw name="Wait For Condition" owner="SeleniumLibrary">
-<arg>return document.readyState == "complete"</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-06-29T21:06:02.233752" elapsed="4.200969"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_orders}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:06:06.435248" elapsed="0.077261"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:06:06.514382" level="INFO">Clicking element 'xpath://p[text()='Orders']'.</msg>
-<arg>${btn_orders}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:06:06.513368" elapsed="0.230110"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_readyToShip}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:06:06.743967" elapsed="0.814986"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:06:07.560319" level="INFO">Clicking element 'xpath://button[text()='Ready to Ship']'.</msg>
-<arg>${btn_readyToShip}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:06:07.559626" elapsed="0.474595"/>
-</kw>
-<kw name="Reload Page" owner="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2025-06-29T21:06:08.034515" elapsed="2.066682"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:06:12.103081" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:06:10.101679" elapsed="2.001675"/>
-</kw>
-<kw name="Wait For Condition" owner="SeleniumLibrary">
-<arg>return document.readyState == "complete"</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-06-29T21:06:12.103814" elapsed="0.022982"/>
-</kw>
-<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:06:12.128247" level="INFO">Clicking element 'xpath://button/span[text()='Got it']'.</msg>
-<msg time="2025-06-29T21:07:12.329518" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-29T21:07:12.330109" level="FAIL">Element with locator 'xpath://button/span[text()='Got it']' not found.</msg>
-<arg>${btn_gotit}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-06-29T21:06:12.127737" elapsed="60.208134">Element with locator 'xpath://button/span[text()='Got it']' not found.</status>
-</kw>
-<arg>Click Element</arg>
-<arg>${btn_gotit}</arg>
-<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="FAIL" start="2025-06-29T21:06:12.127273" elapsed="60.208958">Element with locator 'xpath://button/span[text()='Got it']' not found.</status>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_labelDownloaded}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:07:12.336699" elapsed="0.060040"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:07:12.397857" level="INFO">Clicking element 'xpath://p[text()='Label downloaded']'.</msg>
-<arg>${btn_labelDownloaded}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:07:12.397302" elapsed="0.293878"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_no}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:07:12.691631" elapsed="0.050843"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:07:12.743497" level="INFO">Clicking element 'xpath://p[text()='No']'.</msg>
-<arg>${btn_no}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:07:12.742948" elapsed="0.294251"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:07:14.038378" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:07:13.037474" elapsed="1.001198"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${ele_NoSelected}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:07:14.039138" elapsed="0.057669"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:07:15.099040" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:07:14.097748" elapsed="1.001673"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${chk_selectAllRows}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:07:15.100024" elapsed="0.060156"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:07:15.161906" level="INFO">Clicking element 'xpath://input[@type ='checkbox' and @aria-label='select all rows']/..'.</msg>
-<arg>${chk_selectAllRows}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:07:15.160781" elapsed="0.319288"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_downloadLabel}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:07:15.480664" elapsed="0.068902"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:07:15.551263" level="INFO">Clicking element 'xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/..'.</msg>
-<arg>${btn_downloadLabel}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-29T21:07:15.550437" elapsed="0.234373"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-29T21:07:20.788765" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-29T21:07:15.785469" elapsed="5.003581"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${ele_popup}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-29T21:07:20.789561" elapsed="0.074462"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-06-29T21:08:21.249581" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-29T21:08:21.250232" level="FAIL">Element 'xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/..' not visible after 1 minute.</msg>
-<arg>${btn_downloadLabel}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-06-29T21:07:20.864502" elapsed="60.403109">Element 'xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/..' not visible after 1 minute.</status>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${btn_downloadLabel}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-06-29T21:08:21.268354" elapsed="0.000108"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="NOT RUN" start="2025-06-29T21:08:21.268767" elapsed="0.000079"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.114465" elapsed="0.000033"/>
 </kw>
 <kw name="Process PDF Email Workflow" owner="emailManager">
 <var>${status}</var>
@@ -500,78 +222,67 @@
 <arg>${user.receiver_email}</arg>
 <arg>${EMAIL_PASSKEY}</arg>
 <doc>Main Robot Framework keyword to process PDF email workflow.</doc>
-<status status="NOT RUN" start="2025-06-29T21:08:21.269137" elapsed="0.000078"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.114619" elapsed="0.000035"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${status}</arg>
 <arg>SUCCESS</arg>
 <arg>PDF workflow failed</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2025-06-29T21:08:21.269511" elapsed="0.000076"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.114789" elapsed="0.000033"/>
 </kw>
-<status status="FAIL" start="2025-06-29T21:05:52.392767" elapsed="148.877057">Several failures occurred:
-
-1) Element with locator 'xpath://button/span[text()='Got it']' not found.
-
-2) Element 'xpath://span[text()='Label' and @platform='desktop' and @class='MuiTypography-root MuiTypography-button css-i7eebi']/..' not visible after 1 minute.</status>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109377" elapsed="0.005506"/>
 </branch>
 <branch type="EXCEPT" assign="${error}">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-29T21:08:21.270520" elapsed="6.704496"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.115111" elapsed="0.000033"/>
+</kw>
+<kw name="Stop Virtual Display">
+<arg>${display}</arg>
+<status status="NOT RUN" start="2025-06-29T21:50:05.115309" elapsed="0.000035"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-06-29T21:08:27.976934" level="INFO">Error: Failed for user - 9952431471</msg>
 <arg>Error: Failed for user - ${user.userName}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-29T21:08:27.975617" elapsed="0.001439"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.115469" elapsed="0.000039"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Error occurred: ${error}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-29T21:08:27.977344" elapsed="0.001175"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.115627" elapsed="0.000032"/>
 </kw>
 <kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
-<kw name="Fail" owner="BuiltIn">
-<msg time="2025-06-29T21:08:27.979712" level="FAIL">Test case failed due to caught exception</msg>
-<arg>Test case failed due to caught exception</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="FAIL" start="2025-06-29T21:08:27.979333" elapsed="0.000538">Test case failed due to caught exception</status>
-</kw>
 <arg>Fail</arg>
 <arg>Test case failed due to caught exception</arg>
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="FAIL" start="2025-06-29T21:08:27.978901" elapsed="0.001143">Test case failed due to caught exception</status>
+<status status="NOT RUN" start="2025-06-29T21:50:05.115791" elapsed="0.000034"/>
 </kw>
-<status status="FAIL" start="2025-06-29T21:08:21.270207" elapsed="6.709992">Test case failed due to caught exception</status>
+<status status="NOT RUN" start="2025-06-29T21:50:05.114983" elapsed="0.000902"/>
 </branch>
-<status status="FAIL" start="2025-06-29T21:05:52.392703" elapsed="155.587652">Test case failed due to caught exception</status>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109341" elapsed="0.006620"/>
 </try>
-<var name="${user}">{'userName': '9952431471', 'password': '1422Jp##', 'receiver_email': 'manobca65@gmail.com'}</var>
-<status status="FAIL" start="2025-06-29T21:05:52.392559" elapsed="155.587911">Test case failed due to caught exception</status>
+<var name="${user}"/>
+<status status="NOT RUN" start="2025-06-29T21:50:05.109281" elapsed="0.006719"/>
 </iter>
 <var>${user}</var>
 <value>@{credentials_list}</value>
-<status status="FAIL" start="2025-06-29T21:04:10.496767" elapsed="257.483903">Several failures occurred:
-
-1) Test case failed due to caught exception
-
-2) Test case failed due to caught exception</status>
+<status status="NOT RUN" start="2025-06-29T21:50:05.108932" elapsed="0.007139"/>
 </for>
+<kw name="Stop Virtual Display">
+<arg>${display}</arg>
+<status status="NOT RUN" start="2025-06-29T21:50:05.116658" elapsed="0.000052"/>
+</kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-29T21:08:27.981910" elapsed="0.000324"/>
+<status status="PASS" start="2025-06-29T21:50:05.117433" elapsed="0.000245"/>
 </kw>
 <tag>meesho</tag>
-<status status="FAIL" start="2025-06-29T21:04:10.486324" elapsed="257.496551">Several failures occurred:
-
-1) Test case failed due to caught exception
-
-2) Test case failed due to caught exception</status>
+<status status="FAIL" start="2025-06-29T21:50:05.102573" elapsed="0.015504">No keyword with name 'Start Virtual Display' found.</status>
 </test>
-<status status="FAIL" start="2025-06-29T21:04:09.631453" elapsed="258.354923"/>
+<status status="FAIL" start="2025-06-29T21:50:04.787901" elapsed="0.332351"/>
 </suite>
-<status status="FAIL" start="2025-06-29T21:04:09.543847" elapsed="258.445818"/>
+<status status="FAIL" start="2025-06-29T21:50:04.727338" elapsed="0.395466"/>
 </suite>
 <statistics>
 <total>
@@ -586,7 +297,16 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2025-06-29T21:05:52.379943" level="WARN">WARNING: No PDF files found in directory: C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\labeldownload</msg>
-<msg time="2025-06-29T21:05:52.381812" level="ERROR">FAILURE: No PDF files found in directory: C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\labeldownload</msg>
+<msg time="2025-06-29T21:50:05.098286" level="ERROR">Error in file 'C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\meesho.robot' on line 8: Importing library 'PyVirtualDisplay' failed: ModuleNotFoundError: No module named 'PyVirtualDisplay'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\.venv\Scripts\robot.exe
+  C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\.venv\Scripts\python313.zip
+  C:\Users\11040351\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\11040351\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\11040351\AppData\Local\Programs\Python\Python313
+  C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\.venv
+  C:\Users\11040351\Naveen_Personal\Automation\nav\meeshoAutomation\.venv\Lib\site-packages</msg>
 </errors>
 </robot>
