@@ -21,7 +21,7 @@ jobs:
     - name: Install xvfb
       run: sudo apt-get install --quiet --assume-yes xvfb libnss3-dev ca-certificates
     - name: update permission
-      run: RUN chmod ugo+w /var/log
+      run: sudo chmod ugo+w /var/log
     - name: Setup Chrome
       uses: browser-actions/setup-firefox@v1
     - name: update packages
