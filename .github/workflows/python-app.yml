@@ -24,6 +24,8 @@ jobs:
       run: sudo chmod ugo+w /var/log
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
     - run: chrome --version
     - name: update packages
       run: sudo apt-get --fix-broken --assume-yes install
