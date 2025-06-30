@@ -25,8 +25,9 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: 137
+        chrome-version: 137.0.7151.119
         install-dependencies: true
+        install-chromedriver: true
     - run: chrome --version
     - name: update packages
       run: sudo apt-get --fix-broken --assume-yes install

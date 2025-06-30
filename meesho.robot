@@ -32,7 +32,7 @@ Meesho download Labels
           TRY
             open browser    ${url}   ${BROWSER}   options=add_argument("--disable-popup-blocking"); add_argument("window-size=1920,1080"); add_argument("--ignore-certificate-errors"); add_argument("--ignore-ssl-errors"); add_argument("start-maximized"); add_argument("--no-sandbox"); add_argument("--disable-setuid-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--incognito")
             maximize browser window
-            set selenium implicit wait    60
+            set selenium implicit wait    30
             Wait Until Element Is Visible    ${txt_username}   60
             Input Text    ${txt_username}    ${user.userName}
             Input Text    ${txt_password}    ${user.password}
@@ -52,7 +52,7 @@ Meesho download Labels
             Wait Until Element Is Visible    ${btn_no}   60
             Click Element    ${btn_no}
             sleep   1s
-            Wait Until Element Is Visible    ${ele_NoSelected}      60
+            Wait Until Element Is Visible    ${ele_NoSelected}      30
             sleep   1s
             Wait Until Element Is Visible    ${chk_selectAllRows}   60
             Click Element    ${chk_selectAllRows}
@@ -61,7 +61,9 @@ Meesho download Labels
             Sleep    5s
             Wait Until Element Is Visible    ${ele_popup}           60
             Wait Until Element Is Visible    ${btn_downloadLabel}   60
+            sleep   2s
             Click Element    ${btn_downloadLabel}
+            sleep   50s
             Close All Browsers
             ${status}       Process PDF Email Workflow      ${SENDER_EMAIL}    ${user.receiver_email}    ${EMAIL_PASSKEY}
             Should Be Equal    ${status}    SUCCESS    PDF workflow failed
