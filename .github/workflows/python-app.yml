@@ -58,8 +58,8 @@ jobs:
         done
     - name: download labels
       run: |
+        robot --variable REMOTE_URL:http://localhost:4444 --outputdir results --include meesho .
 #        Xvfb :99 -screen 0 1024x768x24 &
 #        export DISPLAY=:99
-        # stop the build if there are Python syntax errors or undefined names
+#        stop the build if there are Python syntax errors or undefined names
 #        xvfb-run -a -s "-screen 0 1920x1080x24" robot --variable REMOTE_URL:http://localhost:4444 --outputdir results --include meesho .
-        robot --variable REMOTE_URL:http://localhost:4444 --outputdir results --include meesho .
