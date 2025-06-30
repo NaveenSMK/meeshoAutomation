@@ -32,7 +32,11 @@ Meesho download Labels
     ${credentials_list}=    read_csv_file_to_associative    ${CSV_FILE_PATH}
     FOR    ${user}    IN    @{credentials_list}
           TRY
-            open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}
+            Run Keyword If    '${REMOTE_URL}' != 'None'
+        ...    open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}    remote_url=${REMOTE_URL}
+        ...    ELSE
+        ...    open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}
+#            open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}
             maximize browser window
             set selenium implicit wait    30
             Wait Until Element Is Visible    ${txt_username}   60
