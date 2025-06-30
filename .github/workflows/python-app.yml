@@ -48,7 +48,7 @@ jobs:
         pip install -r requirements.txt
     - name: Wait for Selenium
       run: |
-          timeout 60 bash -c "until curl -s http://localhost:4444/wd/hub/status; do sleep 1; done"
+        timeout 60 bash -c "until curl -s http://localhost:4444/wd/hub/status; do sleep 1; done"
     - name: download labels
       run: |
 #        Xvfb :99 -screen 0 1024x768x24 &
