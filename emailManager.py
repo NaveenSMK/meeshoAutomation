@@ -298,6 +298,7 @@ This email was generated automatically. Please do not reply to this email.
             BuiltIn().log(f"Error: {error_msg}", level='ERROR')
             BuiltIn().log(f"Duration: {workflow_duration} seconds", level='ERROR')
             BuiltIn().log("=" * 80, level='ERROR')
+            print(f"Error: {error_msg}")
             return "FAILURE"
 
     @keyword("Set PDF Download Folder")
