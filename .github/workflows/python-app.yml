@@ -29,13 +29,13 @@ jobs:
       run: sudo apt-get install -y --quiet --assume-yes xvfb libnss3-dev ca-certificates libxss1 libappindicator3-1 libindicator7 fonts-liberation libdbus-1-3
     - name: update permission
       run: sudo chmod ugo+w /var/log
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: 137.0.7151.119
-        install-dependencies: true
-        install-chromedriver: true
-    - run: chrome --version
+#    - name: Setup Chrome
+#      uses: browser-actions/setup-chrome@v1
+#      with:
+#        chrome-version: 137.0.7151.119
+#        install-dependencies: true
+#        install-chromedriver: true
+#    - run: chrome --version
     - name: update packages
       run: sudo apt-get --fix-broken --assume-yes install
     - name: Set up Python 3.10
@@ -54,5 +54,5 @@ jobs:
 #        Xvfb :99 -screen 0 1024x768x24 &
 #        export DISPLAY=:99
         # stop the build if there are Python syntax errors or undefined names
-        xvfb-run -a -s "-screen 0 1920x1080x24" robot --variable REMOTE_URL:http://localhost:4444 --outputdir results --include meesho .
-    
+#        xvfb-run -a -s "-screen 0 1920x1080x24" robot --variable REMOTE_URL:http://localhost:4444 --outputdir results --include meesho .
+        robot --variable REMOTE_URL:http://localhost:4444 --outputdir results --include meesho .
