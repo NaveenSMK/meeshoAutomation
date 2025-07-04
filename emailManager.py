@@ -490,3 +490,27 @@ This email was generated automatically. Please do not reply to this email.
 #     print("Save this file as PDFEmailManager.py")
 #     print("Import in .robot files with: Library    PDFEmailManager.py")
 #     print("Use keyword: Process PDF Email Workflow")
+
+
+
+    # - name: Send Email (SMTP)
+    #   uses: dawidd6/action-send-mail@v3
+    #   with:
+    #     server_address: smtp.example.com
+    #     server_port: 465
+    #     username: ${{secrets.EMAIL_USERNAME}}
+    #     password: ${{secrets.EMAIL_PASSWORD}}
+    #     subject: "GitHub Actions Workflow Result"
+    #     body: |
+    #       Workflow: ${{ github.workflow }}
+    #       Job: ${{ github.job }}
+    #       Status: ${{ job.status }}
+    #       Repository: ${{ github.repository }}
+    #       Event: ${{ github.event_name }}
+    #       Run ID: ${{ github.run_id }}
+    #       Run Number: ${{ github.run_number }}
+    #       Workflow URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    #     to: ${{secrets.EMAIL_TO}}
+    #     from: ${{secrets.EMAIL_FROM}}
+    #     convert_body: "text"
+    #     attachments: "path/to/your/log/file.log"  # Optional, if you have a log file

@@ -13,10 +13,12 @@ Test Teardown   Close All Browsers
 ${BROWSER}  chrome
 ${REMOTE_URL}    None
 ${url}      https://supplier.meesho.com/panel/v3/new/root/login
-${CSV_FILE_PATH}        ${CURDIR}/credentials.csv
+${CSV_FILE_PATH}        ${CURDIR}\\credentials.csv
+${DOWNLOAD_DIR}         ${CURDIR}\\labeldownload
 ${SENDER_EMAIL}         navenmohankumar99@gmail.com
 ${EMAIL_PASSKEY}        vzshebjcyoirkbxh
-${CHROME_OPTIONS}       add_argument("--disable-popup-blocking");add_argument("--window-size=1920,1080");add_argument("--ignore-certificate-errors");add_argument("--ignore-ssl-errors");add_argument("--no-sandbox");add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--incognito");add_argument("--disable-gpu");add_argument("--disable-extensions");add_argument("--disable-background-timer-throttling");add_argument("--disable-backgrounding-occluded-windows");add_argument("--disable-renderer-backgrounding");add_argument("--disable-features=TranslateUI");add_argument("--disable-ipc-flooding-protection");add_argument("--disable-web-security");add_argument("--disable-features=VizDisplayCompositor");add_argument("--remote-debugging-port=9222")
+${VAR_CHROME_OPTIONS}       add_argument("--disable-popup-blocking");add_argument("--window-size=1920,1080");add_argument("--ignore-certificate-errors");add_argument("--ignore-ssl-errors");add_argument("--no-sandbox");add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-gpu");add_argument("--disable-extensions");add_argument("--disable-background-timer-throttling");add_argument("--disable-backgrounding-occluded-windows");add_argument("--disable-renderer-backgrounding");add_argument("--disable-features=TranslateUI");add_argument("--disable-ipc-flooding-protection");add_argument("--disable-web-security");add_argument("--disable-features=VizDisplayCompositor");add_argument("--remote-debugging-port=9222")
+#;add_argument("--incognito")
 #5971e126e310bc21104ee2c4b435e225-51afd2db-4e6de1a9
 #9514545414,onaM@6266,manobca65@gmail.com
 #utechtraders@gmail.com,Onam@6266,manobca65@gmail.com
@@ -26,12 +28,16 @@ Meesho download Labels
     [Tags]  meesho
     Set PDF Download Folder    labeldownload
     ${credentials_list}=    read_csv_file_to_associative    ${CSV_FILE_PATH}
+    Log To Console    ${DOWNLOAD_DIR}
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    ${prefs}=    Create Dictionary    download.default_directory=${DOWNLOAD_DIR}    download.prompt_for_download=False    download.directory_upgrade=True
+    Call Method    ${chrome_options}    add_experimental_option    prefs    ${prefs}
     FOR    ${user}    IN    @{credentials_list}
           TRY
             Run Keyword If    '${REMOTE_URL}' != 'None'
-        ...    open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}    remote_url=${REMOTE_URL}
+        ...    open browser    ${url}   ${BROWSER}   options=${chrome_options}    remote_url=${REMOTE_URL}
         ...    ELSE
-        ...    open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}
+        ...    open browser    ${url}   ${BROWSER}   options=${chrome_options}
 #            open browser    ${url}   ${BROWSER}   options=${CHROME_OPTIONS}
             maximize browser window
             set selenium implicit wait    30
