@@ -13,8 +13,8 @@ Test Teardown   Close All Browsers
 ${BROWSER}  chrome
 ${REMOTE_URL}    None
 ${url}      https://supplier.meesho.com/panel/v3/new/root/login
-${CSV_FILE_PATH}        ${CURDIR}\\credentials.csv
-${DOWNLOAD_DIR}         ${CURDIR}\\labeldownload
+${CSV_FILE_PATH}        ${CURDIR}${/}credentials.csv
+${DOWNLOAD_DIR}         ${CURDIR}${/}labeldownload
 ${SENDER_EMAIL}         navenmohankumar99@gmail.com
 ${EMAIL_PASSKEY}        vzshebjcyoirkbxh
 ${VAR_CHROME_OPTIONS}       add_argument("--disable-popup-blocking");add_argument("--window-size=1920,1080");add_argument("--ignore-certificate-errors");add_argument("--ignore-ssl-errors");add_argument("--no-sandbox");add_argument("--disable-setuid-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-gpu");add_argument("--disable-extensions");add_argument("--disable-background-timer-throttling");add_argument("--disable-backgrounding-occluded-windows");add_argument("--disable-renderer-backgrounding");add_argument("--disable-features=TranslateUI");add_argument("--disable-ipc-flooding-protection");add_argument("--disable-web-security");add_argument("--disable-features=VizDisplayCompositor");add_argument("--remote-debugging-port=9222")
